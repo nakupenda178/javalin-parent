@@ -1,0 +1,4 @@
+**使用javalin快速搭建web服务器**[https://javalin.io/]
+1.javalin-parent:管理构件build信息，依赖信息，添加依赖步骤在dependencyManagement中统一添加，properties中加入版本号，子模块中就不用写版本了，统一管理
+2.javalin-base:  业务模块依赖改模块即可快速搭建 javalin 服务,配置了kotlin语言依赖
+3.biz-module:    统一管理业务模块

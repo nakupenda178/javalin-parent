@@ -17,6 +17,16 @@ fun main() {
         config.staticFiles.enableWebjars()
         config.vue.rootDirectory("/vue")
 
+        //cors支持
+        config.bundledPlugins.apply {
+            enableDevLogging()
+            enableCors { cors ->
+                cors.addRule {
+                    it.anyHost()
+                }
+            }
+        }
+
         config.vue.apply {
             stateFunction = { ctx -> mapOf("currentUser" to ctx.currentUser()) }
             vueInstanceNameInJs = "app"
